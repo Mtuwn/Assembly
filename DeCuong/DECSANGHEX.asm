@@ -29,7 +29,11 @@ begin:
     
     inchuoi msg3
     mov bx, so
-    call bin_out
+    call bin_out 
+    
+    
+    mov ah, 4ch
+    int 21h
      
 dec_in proc 
     xor dx, dx
@@ -49,7 +53,7 @@ dec_in proc
         mov cl, al
         mov ax, dx
         mul bx
-        add al, cl
+        add ax, cx
         mov dx, ax          
         
         jmp nhap
@@ -92,7 +96,9 @@ bin_out proc
         
         mov ah, 02h
         int 21h
-        loop xuat2
+        loop xuat2  
+        
+        ret
 bin_out endp 
 
 cseg ends

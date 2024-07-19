@@ -18,11 +18,10 @@ dseg segment
 dseg ends
 
 cseg segment
-assume: cs:cseg, ds:dseg, es:dseg
+assume: cs:cseg, ds:dseg
 begin:   
     mov ax, dseg
-    mov ds, ax 
-    mov es, ax   
+    mov ds, ax   
     
     inchuoi tbao1
     mov ah, 0Ah
@@ -31,9 +30,9 @@ begin:
            
     xor cx, cx
     mov cl, old_len
-    lea bx, oldfile         ;con tro o dau chuoi
-    add bx, cx              ;+cx de dua con tro ve cuoi
-    mov byte ptr [bx], 0    ;them 0 vao cuoi
+    lea bx, oldfile         
+    add bx, cx             
+    mov [bx], 0    
     
     inchuoi tbao2
     mov ah, 0Ah
@@ -42,11 +41,11 @@ begin:
     
     xor cx, cx
     mov cl, new_len
-    lea bx, newfile         ;con tro o dau chuoi
-    add bx, cx              ;+cx de dua con tro ve cuoi
-    mov byte ptr [bx], 0    ;them 0 vao cuoi
+    lea bx, newfile         
+    add bx, cx              
+    mov byte ptr [bx], 0    
     
-    mov ah, 56h             ;doi ten file
+    mov ah, 56h             
     lea dx, oldfile
     lea di, newfile
     int 21h 

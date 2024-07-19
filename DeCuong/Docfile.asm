@@ -2,14 +2,6 @@ inchuoi macro chuoi
     mov ah, 09h
     lea dx, chuoi
     int 21h
-    
-    mov ah, 02h
-    mov dl, 0Ah
-    int 21h 
-    
-    mov ah, 02h
-    mov dl, 0Dh
-    int 21h
 endm
 
 dseg segment

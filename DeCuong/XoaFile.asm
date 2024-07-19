@@ -1,6 +1,6 @@
 dseg segment
-    max db 250           ;so ky tu toi da   
-    len db ?             ;chieu dai chuoi da nhap   
+    max db 250              
+    len db ?               
     tenfile db 250 dup(?)
 dseg ends  
 
@@ -20,7 +20,7 @@ begin:
     add bx, cx              
     mov byte ptr [bx], 0   
     
-    mov ah, 41h ; xoa tap tin da co
+    mov ah, 41h 
     lea dx, tenfile
     int 21h
     

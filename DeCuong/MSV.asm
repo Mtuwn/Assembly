@@ -8,8 +8,7 @@ dseg segment
     msg1    db  "Nhap ma sv (x de thoat): $"
     str     db  100 dup("$")
     msv     db  "AT180249$"
-    hoten   db  "Tran Minh Tuan$"
-    msg2    db  "Ho ten: $"
+    msg2    db  "Ho ten: Tran Minh Tuan$"
     msg3   db  "Sai ma sinh vien $"
     xuongdong   db  10,13, "$" 
 
@@ -52,7 +51,6 @@ begin:
     
     xuatkq:
         inchuoi msg2
-        inchuoi hoten 
     exit:
         mov ah, 4ch
         int 21h
